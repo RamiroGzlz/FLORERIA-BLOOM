@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servicios - Bloom Florería</title>
+
+<link rel="stylesheet" href="estilos_maquetacion.css">
+
+<style>
+body{
+    background:#f5f5f5;
+    font-family:'Poppins', sans-serif;
+}
+
+.titulo{
+    text-align:center;
+    font-size:3rem;
+    margin:50px 0 30px;
+}
+
+.servicios-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    padding:40px;
+}
+
+.servicio{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+    transition:.3s;
+    text-align:center;
+}
+
+.servicio:hover{
+    transform:translateY(-8px);
+}
+
+.servicio img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.servicio h3{
+    padding:15px 10px 5px;
+    color:#333;
+}
+
+.servicio p{
+    padding:0 10px 15px;
+    color:#666;
+    font-size:.95rem;
+}
+
+.btn-flotante-volver{
+    position:fixed;
+    top:20px;
+    left:20px;
+    width:50px;
+    height:50px;
+    background:#ff5c8d;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    font-size:20px;
+    text-decoration:none;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+    transition:.3s;
+    z-index:999;
+}
+
+.btn-flotante-volver:hover{
+    transform:scale(1.1);
+    background:#e84370;
+}
+</style>
+
+</head>
+<body>
+
+<h1 class="titulo">Servicios de Bloom Florería</h1>
+
+<a href="index.html" class="btn-flotante-volver">🏠</a>
+
+<div class="servicios-grid">
+
+<div class="servicio">
+<img src="img/Arreglos.jpg" alt="Arreglos Florales">
+<h3>Arreglos Florales</h3>
+<p>Diseños personalizados y elegantes para cualquier ocasión: cumpleaños, aniversarios, bodas y más.</p>
+</div>
+
+<div class="servicio">
+<img src="img/delivery.webp" alt="Delivery de Flores">
+<h3>Delivery de Flores</h3>
+<p>Entrega rápida y segura directamente a la puerta de tus seres queridos, con cuidado y detalle.</p>
+</div>
+
+<div class="servicio">
+<img src="img/Eventos.webp" alt="Decoración de Eventos">
+<h3>Decoración de Eventos</h3>
+<p>Transformamos espacios para bodas, fiestas y corporativos con flores y ambientación única.</p>
+</div>
+
+<div class="servicio">
+<img src="img/Asesoria.jpg" alt="Asesoría Floral">
+<h3>Asesoría Floral</h3>
+<p>Te ayudamos a elegir las flores perfectas y combinaciones ideales según la ocasión y estilo deseado.</p>
+</div>
+
+<div class="servicio">
+<img src="img/exclusivo.jpg" alt="Flores Exclusivas">
+<h3>Flores Exclusivas</h3>
+<p>Acceso a flores importadas y colecciones limitadas que no encontrarás en ningún otro lugar.</p>
+</div>
+
+<div class="servicio">
+<img src="img/Sub.webp" alt="Suscripción Floral">
+<h3>Suscripción Floral</h3>
+<p>Recibe tus flores favoritas en casa de manera periódica y sorprende a diario a tus seres queridos.</p>
+</div>
+</div>
+</body>
+</html>

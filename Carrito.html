@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrito - Bloom</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f8f6f8;
+}
+
+header{
+    background:white;
+    padding:60px 40px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+header h1{
+    color:#e84393;
+}
+
+.contenedor{
+    max-width:1200px;
+    margin:40px auto;
+    padding:20px;
+}
+
+.producto{
+    background:white;
+    border-radius:20px;
+    padding:20px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    margin-bottom:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.producto img{
+    width:120px;
+    height:120px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+.info{
+    flex:1;
+}
+
+.info h3{
+    color:#333;
+    margin-bottom:10px;
+}
+
+.precio{
+    color:#e84393;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.cantidad-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:15px;
+}
+
+.cantidad-box button{
+    width:35px;
+    height:35px;
+    border:none;
+    border-radius:50%;
+    background:#e84393;
+    color:white;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.eliminar{
+    border:none;
+    background:#ffe5ef;
+    color:#e84393;
+    padding:10px 15px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.resumen{
+    background:white;
+    margin-top:30px;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.total{
+    font-size:28px;
+    font-weight:bold;
+    color:#e84393;
+    margin-top:15px;
+}
+
+.botones{
+    margin-top:20px;
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    border:none;
+    padding:14px 25px;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.pagar{
+    background:#e84393;
+    color:white;
+}
+
+.vaciar{
+    background:#ddd;
+}
+
+.vacio{
+    text-align:center;
+    margin-top:80px;
+    color:#777;
+    font-size:24px;
+}
+
+@media(max-width:768px){
+
+    .producto{
+        flex-direction:column;
+        text-align:center;
+    }
+
+}
+
+/* BOTÓN VOLVER */
+.btn-flotante-volver{
+    position:fixed;
+    top:20px;
+    left:20px;
+    width:50px;
+    height:50px;
+    background:#ff5c8d;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    font-size:20px;
+    text-decoration:none;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+    transition:.3s;
+    z-index:999;
+}
+
+.btn-flotante-volver:hover{
+    transform:scale(1.1);
+    background:#e84370;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>        𝓑𝓛𝓞𝓞𝓜 | Mi Carrito</h1>
+    <a href="index.html" class="btn-flotante-volver">🏠</a>
+</header>
+
+<div class="contenedor">
+
+
+    <div id="productos"></div>
+
+    <div class="resumen">
+
+        <h2>Resumen de compra</h2>
+
+        <div class="total">
+            Total: $<span id="total">0</span> MXN
+        </div>
+
+        <div class="botones">
+
+           <button
+class="btn pagar"
+onclick="window.location.href='checkout.html'">
+    💳 Proceder al pago
+</button>
+
+            <button
+            class="btn vaciar"
+            onclick="vaciarCarrito()">
+                 Vaciar carrito
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+let carrito =
+JSON.parse(localStorage.getItem("carrito")) || [];
+
+const contenedor =
+document.getElementById("productos");
+
+function renderCarrito(){
+
+    contenedor.innerHTML = "";
+
+    let total = 0;
+
+    if(carrito.length === 0){
+
+        contenedor.innerHTML = `
+            <div class="vacio">
+                🛒 Tu carrito está vacío
+            </div>
+        `;
+
+        document.getElementById("total")
+        .textContent = "0";
+
+        return;
+    }
+
+    carrito.forEach((producto,index)=>{
+
+        total +=
+        producto.precio *
+        producto.cantidad;
+
+        contenedor.innerHTML += `
+        <div class="producto">
+
+            <img src="${producto.imagen}">
+
+            <div class="info">
+
+                <h3>${producto.nombre}</h3>
+
+                <p class="precio">
+                    $${producto.precio} MXN
+                </p>
+
+                <div class="cantidad-box">
+
+                    <button onclick="restar(${index})">
+                    -
+                    </button>
+
+                    <strong>
+                        ${producto.cantidad}
+                    </strong>
+
+                    <button onclick="sumar(${index})">
+                    +
+                    </button>
+
+                </div>
+
+            </div>
+
+            <button
+            class="eliminar"
+            onclick="eliminar(${index})">
+
+            🗑 Eliminar
+
+            </button>
+
+        </div>
+        `;
+    });
+
+    document.getElementById("total")
+    .textContent = total;
+}
+
+function sumar(index){
+
+    carrito[index].cantidad++;
+
+    guardar();
+}
+
+function restar(index){
+
+    if(carrito[index].cantidad > 1){
+
+        carrito[index].cantidad--;
+
+    }else{
+
+        carrito.splice(index,1);
+
+    }
+
+    guardar();
+}
+
+function eliminar(index){
+
+    carrito.splice(index,1);
+
+    guardar();
+}
+
+function vaciarCarrito(){
+
+    if(confirm("¿Vaciar carrito?")){
+
+        carrito = [];
+
+        localStorage.removeItem("carrito");
+
+        renderCarrito();
+    }
+}
+
+function guardar(){
+
+    localStorage.setItem(
+        "carrito",
+        JSON.stringify(carrito)
+    );
+
+    renderCarrito();
+}
+
+renderCarrito();
+
+</script>
+
+</body>
+</html>
