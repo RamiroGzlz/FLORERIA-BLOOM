@@ -1,0 +1,103 @@
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100vh;
+      background: url('REGA.png') 
+        no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .login-box {
+      position: relative;
+      z-index: 1;
+      background: url('https://images.unsplash.com/photo-1601597111158-3e37d4c1887c?auto=format&fit=crop&w=400&q=80') no-repeat center;
+      background-size: cover;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 350px;
+      margin: auto;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+    }
+
+    .login-box::before {
+      /* Capa semitransparente sobre la imagen del cuadro */
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Oscurece la imagen del cuadro */
+      border-radius: 15px;
+      z-index: -1;
+    }
+
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #fff;
+    }
+
+    .login-box label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .login-box input[type="text"],
+    .login-box input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .login-box input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background-color: #00c853;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .login-box .extra {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .login-box .extra a {
+      text-decoration: none;
+      color: #00e5ff;
+      font-size: 14px;
+    }
+
+    .login-box .extra a:hover {
+      text-decoration: underline;
+    }

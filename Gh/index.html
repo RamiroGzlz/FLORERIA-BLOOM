@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Florería Bloom</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Íconos -->
+<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-straight/css/uicons-regular-straight.css">
+<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
+
+<!-- Swiper -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<!-- Estilos propios -->
+<link rel="stylesheet" href="estilos_maquetacion.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="container header-container">
+        <div class="logo">
+            <a href="index.html"><img src="img/logo.jpg" alt="Bloom"></a> <h1>𝓑𝓛𝓞𝓞𝓜</h1>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Catálogo.html">Catálogo</a></li>
+                <li><a href="Servicios.html">Servicios</a></li>
+                <li><a href="Galeria.html">Galería</a></li>
+                <li><a href="https://wa.me/529331520358">Contacto</a></li>
+                <li><a href="index2.html" class="btn-login">Login</a></li>
+                <li><a href="carrito.html">🛒 Carrito</a></li>
+                <div class="search-box">
+ <input type="text" id="buscador" placeholder="Buscar..." />
+
+<button onclick="irCatalogo()">Buscar</button>
+
+<script>
+function irCatalogo() {
+  let texto = document.getElementById("buscador").value;
+
+  window.location.href = "Catálogo.html?busqueda=" + encodeURIComponent(texto);
+}
+</script>
+<button class="mic-btn" onclick="voz()">
+  <i class="fa-solid fa-microphone"></i>
+</button>
+</div>
+</a>
+            </ul>
+        </nav>
+    </div>
+</div>
+</header>
+</div>
+<section class="banner-principal">
+<div class="swiper bannerSwiper">
+
+<div class="swiper-wrapper">
+
+<div class="swiper-slide">
+<img src="Banner/bloom.flwrs_.png" alt="">
+</div>
+
+<div class="swiper-slide">
+<img src="Banner/FLORERIA BLOOM.png" alt="">
+</div>
+
+<div class="swiper-slide">
+<img src="Banner/Colonia Petrolera M4 C15, Paraíso, Tabasco.png" alt="">
+</div>
+
+<div class="swiper-slide">
+<img src="Banner/FLORERIA BLOOM (1).png" alt="">
+</div>
+
+<div class="swiper-slide">
+<img src="Banner/5.png" alt="">
+</div>
+
+<div class="swiper-slide">
+<img src="Banner/Colonia Petrolera M4 C15, Paraíso, Tabasco (1).png" alt="">
+</div>
+
+</div>
+
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+<div class="swiper-pagination"></div>
+
+</div>
+
+</section>
+<section class="beneficios container">
+    <h2>¿Por qué elegirnos?</h2>
+    <div class="beneficios-grid">
+        <div class="beneficio">
+            <i class="fi fi-rr-truck"></i>
+            <h3>Entrega rápida</h3>
+            <p>Garantizamos entrega a tiempo en todas tus compras.</p>
+        </div>
+        <div class="beneficio">
+            <i class="fi fi-rr-diamond"></i>
+            <h3>Flores premium</h3>
+            <p>Solo seleccionamos flores frescas y de alta calidad.</p>
+        </div>
+        <div class="beneficio">
+            <i class="fi fi-rr-user"></i>
+            <h3>Atención personalizada</h3>
+            <p>Diseñamos tus arreglos según tus gustos y ocasiones.</p>
+        </div>
+        <div class="beneficio">
+            <i class="fi fi-rr-palette"></i>
+            <h3>Diseños exclusivos</h3>
+            <p>Arreglos únicos que sorprenden y enamoran.</p>
+        </div>
+    </div>
+</section>
+<section class="catalogo-slider container">
+
+<h2>Nuestros Productos</h2>
+
+<div class="catalogo-scroll">
+
+<div class="producto">
+<img src="img/1.webp">
+<h3>Rosas Premium</h3>
+</div>
+
+<div class="producto">
+<img src="img/2.avif">
+<h3>Tulipanes</h3>
+</div>
+
+<div class="producto">
+<img src="img/3.jpg">
+<h3>Girasoles</h3>
+</div>
+
+<div class="producto">
+<img src="img/4.webp">
+<h3>Orquídeas</h3>
+</div>
+
+<div class="producto">
+<img src="img/5.avif">
+<h3>Lirios</h3>
+</div>
+
+<div class="producto">
+<img src="img/6.webp">
+<h3>Peonias</h3>
+</div>
+</div>
+</section>
+<section class="catalogo container">
+    <h2>Catálogo Destacado</h2>
+    <div class="grid-bloom">
+        <div class="box bloom1"><h3>Rosas Premium</h3><p>Arreglos exclusivos y a gran escala</p></div>
+        <div class="box bloom2"><h3>Tulipanes</h3><p>Diseños elegantes y modernos</p></div>
+        <div class="box bloom3"><h3>Girasoles</h3><p>Para cualquier tipo de ocasión</p></div>
+        <div class="box bloom4"><h3>Orquídeas</h3><p>Detalles sofisticados y sumamente elegantes</p></div>
+        <div class="box bloom5"><h3>Bouquets</h3><p>Combinaciones únicas</p></div>
+        <div class="box bloom6" id="zonaInteractiva">
+            <div id="cuadroMovil">🌸</div>
+        </div>
+    </div>
+    <div class="panel-eventos">
+        <p id="mensajeBloom">Haz clic sobre la flor para moverla.</p>
+        <p id="contadorVisitas"></p>
+    </div>
+</section>
+<footer>
+    <div class="container footer-container">
+        <div class="footer-grid">
+            <div>
+                <h4>Contacto</h4>
+                <p>📍 Paraíso, Tabasco</p>
+                <p>📞 +52 993 152 0358</p>
+                <p>✉️ floreriabloom27@gmail.com</p>
+            </div>
+            <div>
+                <h4>Ubicación</h4>
+                <iframe src="https://www.google.com/maps/embed?pb=!4v1780968555544!6m8!1m7!1s4kp_Km50AlsK5ddTrXYOkQ!2m2!1d18.41325170777024!2d-93.20501983038324!3f150.2776558845898!4f-6.239445225303442!5f0.7820865974627469" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div>
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="https://wa.me/529331520358" target="_blank">WhatsApp</a></li>
+                    <li><a href="https://www.instagram.com/bloom.flwrs_/?hl=es">Instagram</a></li>
+                    <li><a href="https://wa.me/529332091623">Soporte</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-bottom">&copy; 2026 Bloom Florería. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+const cuadro = document.getElementById("cuadroMovil");
+const zona = document.getElementById("zonaInteractiva");
+const mensaje = document.getElementById("mensajeBloom");
+let contadorClicks = 0;
+
+if(cuadro){
+    cuadro.addEventListener("click", ()=>{
+        contadorClicks++;
+        const maxX = zona.clientWidth - 100;
+        const maxY = zona.clientHeight - 100;
+        cuadro.style.left = (Math.random()*maxX) + "px";
+        cuadro.style.top = (Math.random()*maxY) + "px";
+        const colores = ["#ffffff","#ffeaa7","#55efc4","#74b9ff","#fd79a8","#fab1a0"];
+        cuadro.style.background = colores[Math.floor(Math.random()*colores.length)];
+        mensaje.innerHTML = "🌸 Interacciones: <strong>" + contadorClicks + "</strong>";
+    });
+}
+
+
+let visitas = localStorage.getItem("visitas") || 0;
+visitas++;
+localStorage.setItem("visitas", visitas);
+document.getElementById("contadorVisitas").innerHTML = "👥 Visitas: " + visitas;
+
+
+const swiper = new Swiper('.swiper', {
+  loop: true,
+  speed: 900,            
+  grabCursor: true,       
+  simulateTouch: true,  
+  touchRatio: 1,         
+  touchAngle: 45,       
+  threshold: 5,           
+
+  autoplay: {
+    delay: 3500,
+    disableOnInteraction: false, 
+    pauseOnMouseEnter: true,
+  },
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  effect: 'slide',
+});
+const express = require("express");
+const axios = require("axios");
+require("dotenv").config();
+const path = require("path");
+
+const app = express();
+</script>
+<script>
+function buscar() {
+  let texto = document.getElementById("buscador").value.toLowerCase();
+  let items = document.querySelectorAll(".item");
+
+  items.forEach(item => {
+    let contenido = item.innerText.toLowerCase();
+
+    item.style.display = contenido.includes(texto) ? "block" : "none";
+  });
+}
+</script>
+<script>
+function voz() {
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  if (!SpeechRecognition) {
+    alert("Tu navegador no soporta voz");
+    return;
+  }
+
+  const recognition = new SpeechRecognition();
+  recognition.lang = "es-MX";
+  recognition.start();
+
+  recognition.onresult = function(event) {
+    const texto = event.results[0][0].transcript;
+
+    document.getElementById("buscador").value = texto;
+    buscar();
+  };
+}
+</script>
+<script>window.addEventListener("load", () => {
+    setTimeout(() => {
+        const intro = document.getElementById("intro");
+        intro.style.transition = "opacity 1s ease";
+        intro.style.opacity = "0";
+        setTimeout(() => intro.remove(), 1000);
+    }, 3500); // tiempo que tarda la flor en florecer
+});</script>
+</body>
+</html>
